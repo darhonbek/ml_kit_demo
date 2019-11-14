@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    /**
+     Initializes and launches window with `viewController`.
+     */
     private func setupFirstScreen() {
         let viewController = ViewController()
 
