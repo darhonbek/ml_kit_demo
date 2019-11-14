@@ -13,11 +13,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // ...
+        setupFirstScreen()
 
         return true
     }
 
+    private func setupFirstScreen() {
+        let viewController = ViewController()
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
+}
+
+// MARK: - UIApplicationDelegate
+
+extension AppDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
     }
 
