@@ -3,14 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2010855A237D11090091FD2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20108559237D11090091FD2E /* AppDelegate.swift */; };
-		2010855C237D11090091FD2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010855B237D11090091FD2E /* ViewController.swift */; };
+		2010855C237D11090091FD2E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010855B237D11090091FD2E /* ScanViewController.swift */; };
 		20108561237D110B0091FD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20108560237D110B0091FD2E /* Assets.xcassets */; };
 		20108564237D110B0091FD2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20108562237D110B0091FD2E /* LaunchScreen.storyboard */; };
+		2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2021F8252382712500DA02E9 /* ScanViewModel.swift */; };
 		B50A3A49D95E98D412DF8FBD /* Pods_Text_Recognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505917E1434491EB273A6DDF /* Pods_Text_Recognizer.framework */; };
 /* End PBXBuildFile section */
 
@@ -18,10 +19,11 @@
 		04D4930F4D8F724C8C65098F /* Pods-Text Recognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.debug.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.debug.xcconfig"; sourceTree = "<group>"; };
 		20108556237D11090091FD2E /* Text Recognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Text Recognizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20108559237D11090091FD2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2010855B237D11090091FD2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2010855B237D11090091FD2E /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		20108560237D110B0091FD2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20108563237D110B0091FD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20108565237D110B0091FD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2021F8252382712500DA02E9 /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		505917E1434491EB273A6DDF /* Pods_Text_Recognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AAE1D7C9F3F9644AA40F773 /* Pods-Text Recognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.release.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,13 +61,38 @@
 		20108558237D11090091FD2E /* Text Recognizer */ = {
 			isa = PBXGroup;
 			children = (
-				20108559237D11090091FD2E /* AppDelegate.swift */,
-				2010855B237D11090091FD2E /* ViewController.swift */,
-				20108560237D110B0091FD2E /* Assets.xcassets */,
-				20108562237D110B0091FD2E /* LaunchScreen.storyboard */,
 				20108565237D110B0091FD2E /* Info.plist */,
+				20108559237D11090091FD2E /* AppDelegate.swift */,
+				2021F8292382714900DA02E9 /* Supporting files */,
+				2021F8282382713C00DA02E9 /* ViewController */,
+				2021F8272382712D00DA02E9 /* ViewModel */,
 			);
 			path = "Text Recognizer";
+			sourceTree = "<group>";
+		};
+		2021F8272382712D00DA02E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2021F8252382712500DA02E9 /* ScanViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2021F8282382713C00DA02E9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2010855B237D11090091FD2E /* ScanViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2021F8292382714900DA02E9 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				20108560237D110B0091FD2E /* Assets.xcassets */,
+				20108562237D110B0091FD2E /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		8BF80EDB9ACDF2AF588F8AE3 /* Pods */ = {
@@ -74,7 +101,6 @@
 				04D4930F4D8F724C8C65098F /* Pods-Text Recognizer.debug.xcconfig */,
 				6AAE1D7C9F3F9644AA40F773 /* Pods-Text Recognizer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -218,7 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2010855C237D11090091FD2E /* ViewController.swift in Sources */,
+				2010855C237D11090091FD2E /* ScanViewController.swift in Sources */,
+				2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */,
 				2010855A237D11090091FD2E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

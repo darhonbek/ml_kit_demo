@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ScanViewController.swift
 //  Text Recognizer
 //
 //  Created by Darkhonbek Mamataliev on 13/11/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ScanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
 

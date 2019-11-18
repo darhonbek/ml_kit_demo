@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Initializes and launches window with `viewController`.
      */
     private func setupFirstScreen() {
-        let viewController = ViewController()
+        let viewController = ScanViewController()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = viewController
