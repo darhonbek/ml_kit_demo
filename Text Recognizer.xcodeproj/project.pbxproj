@@ -12,8 +12,20 @@
 		20108561237D110B0091FD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20108560237D110B0091FD2E /* Assets.xcassets */; };
 		20108564237D110B0091FD2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20108562237D110B0091FD2E /* LaunchScreen.storyboard */; };
 		2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2021F8252382712500DA02E9 /* ScanViewModel.swift */; };
+		2031A855238273BB007A6E2F /* ScanViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A854238273BB007A6E2F /* ScanViewModelTests.swift */; };
+		2031A857238273C6007A6E2F /* ScanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A856238273C6007A6E2F /* ScanViewControllerTests.swift */; };
 		B50A3A49D95E98D412DF8FBD /* Pods_Text_Recognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505917E1434491EB273A6DDF /* Pods_Text_Recognizer.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2031A84F238273A3007A6E2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2010854E237D11090091FD2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20108555237D11090091FD2E;
+			remoteInfo = "Text Recognizer";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04D4930F4D8F724C8C65098F /* Pods-Text Recognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.debug.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -22,8 +34,12 @@
 		2010855B237D11090091FD2E /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		20108560237D110B0091FD2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20108563237D110B0091FD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		20108565237D110B0091FD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20108565237D110B0091FD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Text Recognizer/Info.plist"; sourceTree = "<group>"; };
 		2021F8252382712500DA02E9 /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
+		2031A84A238273A2007A6E2F /* TextRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2031A84E238273A3007A6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2031A854238273BB007A6E2F /* ScanViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModelTests.swift; sourceTree = "<group>"; };
+		2031A856238273C6007A6E2F /* ScanViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewControllerTests.swift; sourceTree = "<group>"; };
 		505917E1434491EB273A6DDF /* Pods_Text_Recognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AAE1D7C9F3F9644AA40F773 /* Pods-Text Recognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.release.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +53,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2031A847238273A2007A6E2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				20108558237D11090091FD2E /* Text Recognizer */,
+				20108565237D110B0091FD2E /* Info.plist */,
+				2031A84B238273A3007A6E2F /* TextRecognizerTests */,
+				2031A84E238273A3007A6E2F /* Info.plist */,
 				20108557237D11090091FD2E /* Products */,
 				8BF80EDB9ACDF2AF588F8AE3 /* Pods */,
 				BA1B5A504BDDD6CE8D51B88A /* Frameworks */,
@@ -54,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				20108556237D11090091FD2E /* Text Recognizer.app */,
+				2031A84A238273A2007A6E2F /* TextRecognizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,11 +88,10 @@
 		20108558237D11090091FD2E /* Text Recognizer */ = {
 			isa = PBXGroup;
 			children = (
-				20108565237D110B0091FD2E /* Info.plist */,
 				20108559237D11090091FD2E /* AppDelegate.swift */,
-				2021F8292382714900DA02E9 /* Supporting files */,
 				2021F8282382713C00DA02E9 /* ViewController */,
 				2021F8272382712D00DA02E9 /* ViewModel */,
+				2021F8292382714900DA02E9 /* Supporting files */,
 			);
 			path = "Text Recognizer";
 			sourceTree = "<group>";
@@ -93,6 +119,31 @@
 				20108562237D110B0091FD2E /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		2031A84B238273A3007A6E2F /* TextRecognizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2031A858238273CD007A6E2F /* ViewController */,
+				2031A859238273DB007A6E2F /* ViewModel */,
+			);
+			path = TextRecognizerTests;
+			sourceTree = "<group>";
+		};
+		2031A858238273CD007A6E2F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2031A856238273C6007A6E2F /* ScanViewControllerTests.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2031A859238273DB007A6E2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2031A854238273BB007A6E2F /* ScanViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8BF80EDB9ACDF2AF588F8AE3 /* Pods */ = {
@@ -135,6 +186,24 @@
 			productReference = 20108556237D11090091FD2E /* Text Recognizer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2031A849238273A2007A6E2F /* TextRecognizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2031A853238273A3007A6E2F /* Build configuration list for PBXNativeTarget "TextRecognizerTests" */;
+			buildPhases = (
+				2031A846238273A2007A6E2F /* Sources */,
+				2031A847238273A2007A6E2F /* Frameworks */,
+				2031A848238273A2007A6E2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2031A850238273A3007A6E2F /* PBXTargetDependency */,
+			);
+			name = TextRecognizerTests;
+			productName = TextRecognizerTests;
+			productReference = 2031A84A238273A2007A6E2F /* TextRecognizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,6 +216,10 @@
 				TargetAttributes = {
 					20108555237D11090091FD2E = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					2031A849238273A2007A6E2F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 20108555237D11090091FD2E;
 					};
 				};
 			};
@@ -164,6 +237,7 @@
 			projectRoot = "";
 			targets = (
 				20108555237D11090091FD2E /* Text Recognizer */,
+				2031A849238273A2007A6E2F /* TextRecognizerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +249,13 @@
 			files = (
 				20108564237D110B0091FD2E /* LaunchScreen.storyboard in Resources */,
 				20108561237D110B0091FD2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2031A848238273A2007A6E2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +331,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2031A846238273A2007A6E2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2031A857238273C6007A6E2F /* ScanViewControllerTests.swift in Sources */,
+				2031A855238273BB007A6E2F /* ScanViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2031A850238273A3007A6E2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20108555237D11090091FD2E /* Text Recognizer */;
+			targetProxy = 2031A84F238273A3007A6E2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		20108562237D110B0091FD2E /* LaunchScreen.storyboard */ = {
@@ -418,6 +516,46 @@
 			};
 			name = Release;
 		};
+		2031A851238273A3007A6E2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TALWF53E28;
+				INFOPLIST_FILE = TextRecognizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = darkhonbek.TextRecognizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Text Recognizer.app/Text Recognizer";
+			};
+			name = Debug;
+		};
+		2031A852238273A3007A6E2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TALWF53E28;
+				INFOPLIST_FILE = TextRecognizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = darkhonbek.TextRecognizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Text Recognizer.app/Text Recognizer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -435,6 +573,15 @@
 			buildConfigurations = (
 				20108569237D110B0091FD2E /* Debug */,
 				2010856A237D110B0091FD2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2031A853238273A3007A6E2F /* Build configuration list for PBXNativeTarget "TextRecognizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2031A851238273A3007A6E2F /* Debug */,
+				2031A852238273A3007A6E2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
