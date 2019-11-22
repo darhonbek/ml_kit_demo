@@ -15,6 +15,10 @@
 		2031A855238273BB007A6E2F /* ScanViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A854238273BB007A6E2F /* ScanViewModelTests.swift */; };
 		2031A857238273C6007A6E2F /* ScanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A856238273C6007A6E2F /* ScanViewControllerTests.swift */; };
 		2031A85C23827AD1007A6E2F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A85B23827AD1007A6E2F /* PreviewView.swift */; };
+		209CEB6C23865D0900F2B3E9 /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CEB6B23865D0900F2B3E9 /* TextRecognizer.swift */; };
+		209CEB7123865F1D00F2B3E9 /* ScanViewModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CEB7023865F1D00F2B3E9 /* ScanViewModelsFactory.swift */; };
+		209CEB7323865F2600F2B3E9 /* ScanViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CEB7223865F2600F2B3E9 /* ScanViewControllersFactory.swift */; };
+		209CEB762386653900F2B3E9 /* VisionTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CEB752386653900F2B3E9 /* VisionTextModel.swift */; };
 		B50A3A49D95E98D412DF8FBD /* Pods_Text_Recognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505917E1434491EB273A6DDF /* Pods_Text_Recognizer.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,10 @@
 		2031A854238273BB007A6E2F /* ScanViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModelTests.swift; sourceTree = "<group>"; };
 		2031A856238273C6007A6E2F /* ScanViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewControllerTests.swift; sourceTree = "<group>"; };
 		2031A85B23827AD1007A6E2F /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		209CEB6B23865D0900F2B3E9 /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
+		209CEB7023865F1D00F2B3E9 /* ScanViewModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModelsFactory.swift; sourceTree = "<group>"; };
+		209CEB7223865F2600F2B3E9 /* ScanViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewControllersFactory.swift; sourceTree = "<group>"; };
+		209CEB752386653900F2B3E9 /* VisionTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTextModel.swift; sourceTree = "<group>"; };
 		505917E1434491EB273A6DDF /* Pods_Text_Recognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AAE1D7C9F3F9644AA40F773 /* Pods-Text Recognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.release.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,8 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				20108559237D11090091FD2E /* AppDelegate.swift */,
+				209CEB77238781C000F2B3E9 /* ViewControllerFactory */,
+				209CEB6F23865F0D00F2B3E9 /* ViewModelFactory */,
 				2021F8282382713C00DA02E9 /* ViewController */,
 				2021F8272382712D00DA02E9 /* ViewModel */,
+				209CEB742386651D00F2B3E9 /* Model */,
+				209CEB6A23865CF200F2B3E9 /* TextRecognition */,
 				2031A85A23827AC0007A6E2F /* View */,
 				2021F8292382714900DA02E9 /* Supporting files */,
 			);
@@ -155,6 +167,38 @@
 				2031A85B23827AD1007A6E2F /* PreviewView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		209CEB6A23865CF200F2B3E9 /* TextRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				209CEB6B23865D0900F2B3E9 /* TextRecognizer.swift */,
+			);
+			path = TextRecognition;
+			sourceTree = "<group>";
+		};
+		209CEB6F23865F0D00F2B3E9 /* ViewModelFactory */ = {
+			isa = PBXGroup;
+			children = (
+				209CEB7023865F1D00F2B3E9 /* ScanViewModelsFactory.swift */,
+			);
+			path = ViewModelFactory;
+			sourceTree = "<group>";
+		};
+		209CEB742386651D00F2B3E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				209CEB752386653900F2B3E9 /* VisionTextModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		209CEB77238781C000F2B3E9 /* ViewControllerFactory */ = {
+			isa = PBXGroup;
+			children = (
+				209CEB7223865F2600F2B3E9 /* ScanViewControllersFactory.swift */,
+			);
+			path = ViewControllerFactory;
 			sourceTree = "<group>";
 		};
 		8BF80EDB9ACDF2AF588F8AE3 /* Pods */ = {
@@ -340,6 +384,10 @@
 				2031A85C23827AD1007A6E2F /* PreviewView.swift in Sources */,
 				2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */,
 				2010855A237D11090091FD2E /* AppDelegate.swift in Sources */,
+				209CEB7323865F2600F2B3E9 /* ScanViewControllersFactory.swift in Sources */,
+				209CEB6C23865D0900F2B3E9 /* TextRecognizer.swift in Sources */,
+				209CEB762386653900F2B3E9 /* VisionTextModel.swift in Sources */,
+				209CEB7123865F1D00F2B3E9 /* ScanViewModelsFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

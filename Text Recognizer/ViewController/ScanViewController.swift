@@ -9,7 +9,13 @@
 import AVFoundation
 import UIKit
 
+private extension String {
+    static let cameraQueueLabel = "cameraQueue"
+}
+
 class ScanViewController: UIViewController {
+    private let viewModel: ScanViewModelProtocol
+
     private lazy var captureSession: AVCaptureSession = {
         return AVCaptureSession()
     }()
@@ -23,10 +29,10 @@ class ScanViewController: UIViewController {
 
     // MARK: - Init
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    init(viewModel: ScanViewModelProtocol) {
+        self.viewModel = viewModel
 
-        // ...
+        super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -40,8 +46,16 @@ class ScanViewController: UIViewController {
 
         setupCameraSession()
         setupCameraPreview()
-        captureSession.startRunning()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        captureSession.startRunning()
+
+    }
+
+    // MARK: - Camera Setup
 
     private func setupCameraSession() {
         captureSession.beginConfiguration()
@@ -59,10 +73,13 @@ class ScanViewController: UIViewController {
     }
 
     private func setupCameraOutput() {
-        let photoOutput = AVCapturePhotoOutput()
-        guard captureSession.canAddOutput(photoOutput) else { return }
-        captureSession.sessionPreset = .photo
-        captureSession.addOutput(photoOutput)
+        let videoOutput = AVCaptureVideoDataOutput()
+        let cameraQueue = DispatchQueue(label: .cameraQueueLabel)
+        videoOutput.setSampleBufferDelegate(self, queue: cameraQueue)
+
+        guard captureSession.canAddOutput(videoOutput) else { return }
+        captureSession.sessionPreset = .high
+        captureSession.addOutput(videoOutput)
     }
 
     private func setupCameraPreview() {
@@ -73,5 +90,13 @@ class ScanViewController: UIViewController {
         previewView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
         previewView.videoPreviewLayer.session = captureSession
+    }
+}
+
+// MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
+
+extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        viewModel.recognizeText(from: sampleBuffer)
     }
 }

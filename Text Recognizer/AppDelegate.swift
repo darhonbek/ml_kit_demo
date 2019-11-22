@@ -19,10 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     /**
-     Initializes and launches window with `viewController`.
+     Initializes and launches window with `scanViewController`.
      */
     private func setupFirstScreen() {
-        let viewController = ScanViewController()
+        let textRecognizer = TextRecognizer()
+        let viewModel = ScanViewModelFactory.scanViewModel(textRecognizer: textRecognizer)
+        let viewController = ScanViewControllerFactory.scanViewController(viewModel: viewModel)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = viewController
