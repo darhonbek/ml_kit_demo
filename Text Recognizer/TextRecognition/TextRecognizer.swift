@@ -6,19 +6,27 @@
 //  Copyright © 2019 Darkhonbek Mamataliev. All rights reserved.
 //
 
+import UIKit
 import FirebaseMLVision
 
-protocol VisionImageProtocol {
-    // ...
-}
-
 protocol TextRecognizerProtocol {
-    func process(_ image: VisionImageProtocol, completion: @escaping VisionTextRecognitionCallback)
+    func process(_ image: UIImage, completion: @escaping VisionTextRecognitionCallback)
 }
 
 class TextRecognizer: TextRecognizerProtocol {
+    var isProcessing: Bool
+    private let textRecognizer: VisionTextRecognizer
+    private let visionImageType: VisionImage.Type
 
-    func process(_ image: VisionImageProtocol, completion: @escaping VisionTextRecognitionCallback) {
-        // ...
+    init(visionType: Vision.Type = Vision.self, visionImageType: VisionImage.Type = VisionImage.self) {
+        self.visionImageType = visionImageType
+        textRecognizer = visionType.vision().onDeviceTextRecognizer()
+        isProcessing = false
+    }
+
+    func process(_ image: UIImage, completion: @escaping VisionTextRecognitionCallback) {
+        let visionImage = visionImageType.init(image: image)
+        visionImage.metadata?.orientation = image.visionImageOrientation()
+        
     }
 }

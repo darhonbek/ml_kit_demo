@@ -18,7 +18,7 @@ class ScanViewModel: ScanViewModelProtocol {
     private let context: CIContext
     private var isRecognitionInProgress = false
 
-    init(textRecognizer: TextRecognizerProtocol, context: CIContext = CIContext()) {
+    init(textRecognizer: TextRecognizerProtocol = TextRecognizer(), context: CIContext = CIContext()) {
         self.textRecognizer = textRecognizer
         self.context = context
     }
@@ -32,7 +32,9 @@ class ScanViewModel: ScanViewModelProtocol {
                 return
             }
 
-//            textRecognizer.process(image)
+            textRecognizer.process(image) { visionText, error in
+                // ...
+            }
         }
     }
 }
