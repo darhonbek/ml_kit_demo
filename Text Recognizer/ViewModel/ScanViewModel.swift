@@ -10,7 +10,7 @@ import AVFoundation
 import UIKit
 
 protocol ScanViewModelProtocol {
-    func recognizeText(from sampleBuffer: CMSampleBuffer)
+    func recognizeText(from image: UIImage)
 }
 
 class ScanViewModel: ScanViewModelProtocol {
@@ -23,27 +23,21 @@ class ScanViewModel: ScanViewModelProtocol {
         self.context = context
     }
 
-    func recognizeText(from sampleBuffer: CMSampleBuffer) {
+    func recognizeText(from image: UIImage) {
         if !isRecognitionInProgress {
             isRecognitionInProgress = true
 
-            guard let image = makeImage(from: sampleBuffer) else {
-                isRecognitionInProgress = false
-                return
-            }
+            textRecognizer.process(image) { [weak self] visionText, error in
+                guard let self = self else { return }
 
-            textRecognizer.process(image) { visionText, error in
-                // ...
+                self.isRecognitionInProgress = false
+
+                guard let visionText = visionText else { return }
+
+                print(visionText.text)
+
+                // TODO: - WIP
             }
         }
-    }
-}
-
-extension ScanViewModel {
-    private func makeImage(from sampleBuffer: CMSampleBuffer) -> UIImage? {
-        guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
-        let ciImage = CIImage(cvPixelBuffer: imageBuffer)
-        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
-        return UIImage(cgImage: cgImage)
     }
 }

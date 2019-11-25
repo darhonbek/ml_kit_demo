@@ -20,6 +20,10 @@
 		209CEB7323865F2600F2B3E9 /* ScanViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CEB7223865F2600F2B3E9 /* ScanViewControllersFactory.swift */; };
 		209EBC15238B12780008C5E1 /* UIImage+VisionDetectorImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC14238B12780008C5E1 /* UIImage+VisionDetectorImageOrientation.swift */; };
 		209EBC17238B16E00008C5E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209EBC16238B16E00008C5E1 /* GoogleService-Info.plist */; };
+		209EBC19238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC18238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift */; };
+		209EBC1B238B8A8A0008C5E1 /* PatternDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1A238B8A8A0008C5E1 /* PatternDetector.swift */; };
+		209EBC1E238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1D238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift */; };
+		209EBC20238B98A10008C5E1 /* NSRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1F238B98A10008C5E1 /* NSRegularExpression.swift */; };
 		3E7A6E06B44F29689A49796E /* Pods_Text_Recognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260F13327DCC2D87D5F31DD5 /* Pods_Text_Recognizer.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,10 @@
 		209CEB7223865F2600F2B3E9 /* ScanViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewControllersFactory.swift; sourceTree = "<group>"; };
 		209EBC14238B12780008C5E1 /* UIImage+VisionDetectorImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+VisionDetectorImageOrientation.swift"; sourceTree = "<group>"; };
 		209EBC16238B16E00008C5E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		209EBC18238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer+UIImage.swift"; sourceTree = "<group>"; };
+		209EBC1A238B8A8A0008C5E1 /* PatternDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDetector.swift; sourceTree = "<group>"; };
+		209EBC1D238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTextPatternDetectorResult.swift; sourceTree = "<group>"; };
+		209EBC1F238B98A10008C5E1 /* NSRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRegularExpression.swift; sourceTree = "<group>"; };
 		25D777FFA1677B4D2859A125 /* Pods-Text Recognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.release.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.release.xcconfig"; sourceTree = "<group>"; };
 		260F13327DCC2D87D5F31DD5 /* Pods_Text_Recognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F87CA9B7577A603CEE83C2E /* Pods-Text Recognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.debug.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,7 +115,8 @@
 				2031A85A23827AC0007A6E2F /* View */,
 				2021F8282382713C00DA02E9 /* ViewController */,
 				2021F8272382712D00DA02E9 /* ViewModel */,
-				209CEB6A23865CF200F2B3E9 /* TextRecognition */,
+				209EBC1C238B8C870008C5E1 /* Model */,
+				209CEB6A23865CF200F2B3E9 /* Services */,
 				209EBC13238B12640008C5E1 /* Extensions */,
 				2021F8292382714900DA02E9 /* Supporting files */,
 			);
@@ -172,12 +181,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		209CEB6A23865CF200F2B3E9 /* TextRecognition */ = {
+		209CEB6A23865CF200F2B3E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				209CEB6B23865D0900F2B3E9 /* TextRecognizer.swift */,
+				209EBC1A238B8A8A0008C5E1 /* PatternDetector.swift */,
 			);
-			path = TextRecognition;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		209CEB6F23865F0D00F2B3E9 /* ViewModelFactory */ = {
@@ -199,9 +209,19 @@
 		209EBC13238B12640008C5E1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				209EBC18238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift */,
+				209EBC1F238B98A10008C5E1 /* NSRegularExpression.swift */,
 				209EBC14238B12780008C5E1 /* UIImage+VisionDetectorImageOrientation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		209EBC1C238B8C870008C5E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				209EBC1D238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		47D83482A084A78D4DB4DE02 /* Frameworks */ = {
@@ -384,7 +404,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209EBC1E238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift in Sources */,
 				2010855C237D11090091FD2E /* ScanViewController.swift in Sources */,
+				209EBC19238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift in Sources */,
+				209EBC20238B98A10008C5E1 /* NSRegularExpression.swift in Sources */,
+				209EBC1B238B8A8A0008C5E1 /* PatternDetector.swift in Sources */,
 				2031A85C23827AD1007A6E2F /* PreviewView.swift in Sources */,
 				2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */,
 				2010855A237D11090091FD2E /* AppDelegate.swift in Sources */,

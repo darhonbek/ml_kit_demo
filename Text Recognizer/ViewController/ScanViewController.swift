@@ -97,6 +97,7 @@ class ScanViewController: UIViewController {
 
 extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        viewModel.recognizeText(from: sampleBuffer)
+        guard let image = sampleBuffer.toImage(videoOrientation: connection.videoOrientation) else { return }
+        viewModel.recognizeText(from: image)
     }
 }
