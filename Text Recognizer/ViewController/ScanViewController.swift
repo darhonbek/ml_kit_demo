@@ -55,6 +55,16 @@ class ScanViewController: UIViewController {
 
     }
 
+    // MARK: - Orientation
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
+
     // MARK: - Camera Setup
 
     private func setupCameraSession() {
@@ -97,7 +107,8 @@ class ScanViewController: UIViewController {
 
 extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let image = sampleBuffer.toImage(videoOrientation: connection.videoOrientation) else { return }
+        // Note: `videoOrientation` is set to `.portrait` explicitly.
+        guard let image = sampleBuffer.toImage(videoOrientation: .portrait) else { return }
         viewModel.recognizeText(from: image)
     }
 }

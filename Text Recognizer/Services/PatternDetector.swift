@@ -9,32 +9,33 @@
 import FirebaseMLVision
 
 enum Regex: String {
-    case carNumber = "[0-9]{2}[A-Za-z][0-9]{3}[A-Za-z]"
-    // more regexes for different use cases
+    case carNumber = "[0-9]{2}[A-Za-z][0-9]{3}[A-Za-z]{2}"  // 01A123AA
+    case cardNumber = "[0-9]{16}"                           // 1234567890123456
+    case studentId = "U[0-9]{7}"                            // U1710001
 }
 
 protocol VisionTextPatternDetectorProtocol {
-    static func detect(in visionText: VisionText, regex: NSRegularExpression) -> VisionTextPatternDetectorResult?
+    func detect(in visionText: VisionText) -> VisionTextPatternDetectorResult?
 }
 
 class VisionTextPatternDetector: VisionTextPatternDetectorProtocol {
-    static let carNumberRegex = NSRegularExpression(Regex.carNumber.rawValue)
+    private let regex: NSRegularExpression
 
-    static func detect(in visionText: VisionText,
-                       regex: NSRegularExpression = carNumberRegex) -> VisionTextPatternDetectorResult? {
-        // TODO: - WIP
-        // Search for pattern in entire content
-//        visionText.text
+    init(regex: NSRegularExpression = NSRegularExpression(Regex.studentId.rawValue)) {
+        self.regex = regex
+    }
 
-        // Search for pattern in blocks
-//        visionText.blocks
+    func detect(in visionText: VisionText) -> VisionTextPatternDetectorResult? {
+        var result: VisionTextPatternDetectorResult?
 
-        // Search for pattern in lines
-//        block.lines
+        for block in visionText.blocks {
+            for line in block.lines {
+                if regex.matches(line.text) {
+                    result = VisionTextPatternDetectorResult(text: line.text, frame: line.frame)
+                }
+            }
+        }
 
-        // Search for pattern in elements
-//        line.elements
-
-        return nil
+        return result
     }
 }

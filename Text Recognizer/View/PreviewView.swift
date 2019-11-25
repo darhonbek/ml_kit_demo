@@ -15,6 +15,7 @@ class PreviewView: UIView {
     }
 
     var videoPreviewLayer: AVCaptureVideoPreviewLayer {
+        // TODO: - Move to main thread.
         return layer as! AVCaptureVideoPreviewLayer
     }
 }

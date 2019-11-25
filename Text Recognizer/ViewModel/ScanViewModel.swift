@@ -15,11 +15,15 @@ protocol ScanViewModelProtocol {
 
 class ScanViewModel: ScanViewModelProtocol {
     private let textRecognizer: TextRecognizerProtocol
+    private let patternDetector: VisionTextPatternDetectorProtocol
     private let context: CIContext
     private var isRecognitionInProgress = false
 
-    init(textRecognizer: TextRecognizerProtocol = TextRecognizer(), context: CIContext = CIContext()) {
+    init(textRecognizer: TextRecognizerProtocol = TextRecognizer(),
+         patternDetector: VisionTextPatternDetectorProtocol = VisionTextPatternDetector(),
+         context: CIContext = CIContext()) {
         self.textRecognizer = textRecognizer
+        self.patternDetector = patternDetector
         self.context = context
     }
 
@@ -34,9 +38,9 @@ class ScanViewModel: ScanViewModelProtocol {
 
                 guard let visionText = visionText else { return }
 
-                print(visionText.text)
-
-                // TODO: - WIP
+                if let result = self.patternDetector.detect(in: visionText) {
+                    print("Car detected: \(result.text)")
+                }
             }
         }
     }

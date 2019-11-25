@@ -15,6 +15,7 @@ protocol TextRecognizerProtocol {
 
 class TextRecognizer: TextRecognizerProtocol {
     var isProcessing: Bool
+
     private let visionTextRecognizer: VisionTextRecognizer
     private let visionImageType: VisionImage.Type
 
@@ -26,9 +27,7 @@ class TextRecognizer: TextRecognizerProtocol {
 
     func process(_ image: UIImage, completion: @escaping VisionTextRecognitionCallback) {
         let visionImage = visionImageType.init(image: image)
-        visionImage.metadata?.orientation = image.visionImageOrientation()
-
-        // Text recognition happens here.
+        // Text recognition is happening here.
         visionTextRecognizer.process(visionImage, completion: completion)
     }
 }
