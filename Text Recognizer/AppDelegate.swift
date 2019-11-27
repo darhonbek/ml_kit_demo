@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Initializes and launches window with `scanViewController`.
      */
     private func setupFirstScreen() {
+        // Move 3 lines below to flow coordinator.
         let textRecognizer = TextRecognizer()
         let viewModel = ScanViewModelFactory.scanViewModel(textRecognizer: textRecognizer)
         let viewController = ScanViewControllerFactory.scanViewController(viewModel: viewModel)

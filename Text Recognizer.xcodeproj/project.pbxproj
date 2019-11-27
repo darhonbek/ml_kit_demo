@@ -11,6 +11,8 @@
 		2010855C237D11090091FD2E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010855B237D11090091FD2E /* ScanViewController.swift */; };
 		20108561237D110B0091FD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20108560237D110B0091FD2E /* Assets.xcassets */; };
 		20108564237D110B0091FD2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20108562237D110B0091FD2E /* LaunchScreen.storyboard */; };
+		2015C4F4238E38700069D973 /* ImageTextDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015C4F3238E38700069D973 /* ImageTextDTO.swift */; };
+		2015C4F6238E3ACB0069D973 /* VerificationViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2015C4F5238E3ACB0069D973 /* VerificationViewControllerFactory.swift */; };
 		2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2021F8252382712500DA02E9 /* ScanViewModel.swift */; };
 		2031A855238273BB007A6E2F /* ScanViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A854238273BB007A6E2F /* ScanViewModelTests.swift */; };
 		2031A857238273C6007A6E2F /* ScanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031A856238273C6007A6E2F /* ScanViewControllerTests.swift */; };
@@ -21,8 +23,12 @@
 		209EBC17238B16E00008C5E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 209EBC16238B16E00008C5E1 /* GoogleService-Info.plist */; };
 		209EBC19238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC18238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift */; };
 		209EBC1B238B8A8A0008C5E1 /* PatternDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1A238B8A8A0008C5E1 /* PatternDetector.swift */; };
-		209EBC1E238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1D238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift */; };
+		209EBC1E238B8CA80008C5E1 /* ImageTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1D238B8CA80008C5E1 /* ImageTextModel.swift */; };
 		209EBC20238B98A10008C5E1 /* NSRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC1F238B98A10008C5E1 /* NSRegularExpression.swift */; };
+		209EBC22238BB6F80008C5E1 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC21238BB6F80008C5E1 /* VerificationViewController.swift */; };
+		209EBC24238BB7410008C5E1 /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */; };
+		209EBC26238E32CA0008C5E1 /* UIImage+crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC25238E32CA0008C5E1 /* UIImage+crop.swift */; };
+		209EBC28238E336C0008C5E1 /* VerificationViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209EBC27238E336C0008C5E1 /* VerificationViewModelFactory.swift */; };
 		3E7A6E06B44F29689A49796E /* Pods_Text_Recognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260F13327DCC2D87D5F31DD5 /* Pods_Text_Recognizer.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,8 @@
 		20108560237D110B0091FD2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20108563237D110B0091FD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20108565237D110B0091FD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Text Recognizer/Info.plist"; sourceTree = "<group>"; };
+		2015C4F3238E38700069D973 /* ImageTextDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextDTO.swift; sourceTree = "<group>"; };
+		2015C4F5238E3ACB0069D973 /* VerificationViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewControllerFactory.swift; sourceTree = "<group>"; };
 		2021F8252382712500DA02E9 /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		2031A84A238273A2007A6E2F /* TextRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2031A84E238273A3007A6E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +63,12 @@
 		209EBC16238B16E00008C5E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		209EBC18238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer+UIImage.swift"; sourceTree = "<group>"; };
 		209EBC1A238B8A8A0008C5E1 /* PatternDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternDetector.swift; sourceTree = "<group>"; };
-		209EBC1D238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTextPatternDetectorResult.swift; sourceTree = "<group>"; };
+		209EBC1D238B8CA80008C5E1 /* ImageTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTextModel.swift; sourceTree = "<group>"; };
 		209EBC1F238B98A10008C5E1 /* NSRegularExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRegularExpression.swift; sourceTree = "<group>"; };
+		209EBC21238BB6F80008C5E1 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		209EBC25238E32CA0008C5E1 /* UIImage+crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+crop.swift"; sourceTree = "<group>"; };
+		209EBC27238E336C0008C5E1 /* VerificationViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewModelFactory.swift; sourceTree = "<group>"; };
 		25D777FFA1677B4D2859A125 /* Pods-Text Recognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.release.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.release.xcconfig"; sourceTree = "<group>"; };
 		260F13327DCC2D87D5F31DD5 /* Pods_Text_Recognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F87CA9B7577A603CEE83C2E /* Pods-Text Recognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text Recognizer.debug.xcconfig"; path = "Target Support Files/Pods-Text Recognizer/Pods-Text Recognizer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +126,7 @@
 				2021F8282382713C00DA02E9 /* ViewController */,
 				209EBC1C238B8C870008C5E1 /* Model */,
 				2021F8272382712D00DA02E9 /* ViewModel */,
-				209CEB6A23865CF200F2B3E9 /* Services */,
+				209CEB6A23865CF200F2B3E9 /* Text Recognition */,
 				209EBC13238B12640008C5E1 /* Extensions */,
 				2021F8292382714900DA02E9 /* Supporting files */,
 			);
@@ -125,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				2021F8252382712500DA02E9 /* ScanViewModel.swift */,
+				209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				2010855B237D11090091FD2E /* ScanViewController.swift */,
+				209EBC21238BB6F80008C5E1 /* VerificationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -179,19 +193,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		209CEB6A23865CF200F2B3E9 /* Services */ = {
+		209CEB6A23865CF200F2B3E9 /* Text Recognition */ = {
 			isa = PBXGroup;
 			children = (
-				209CEB6B23865D0900F2B3E9 /* TextRecognizer.swift */,
 				209EBC1A238B8A8A0008C5E1 /* PatternDetector.swift */,
+				209CEB6B23865D0900F2B3E9 /* TextRecognizer.swift */,
 			);
-			path = Services;
+			path = "Text Recognition";
 			sourceTree = "<group>";
 		};
 		209CEB6F23865F0D00F2B3E9 /* ViewModelFactory */ = {
 			isa = PBXGroup;
 			children = (
 				209CEB7023865F1D00F2B3E9 /* ScanViewModelsFactory.swift */,
+				209EBC27238E336C0008C5E1 /* VerificationViewModelFactory.swift */,
 			);
 			path = ViewModelFactory;
 			sourceTree = "<group>";
@@ -200,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				209CEB7223865F2600F2B3E9 /* ScanViewControllersFactory.swift */,
+				2015C4F5238E3ACB0069D973 /* VerificationViewControllerFactory.swift */,
 			);
 			path = ViewControllerFactory;
 			sourceTree = "<group>";
@@ -209,6 +225,7 @@
 			children = (
 				209EBC18238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift */,
 				209EBC1F238B98A10008C5E1 /* NSRegularExpression.swift */,
+				209EBC25238E32CA0008C5E1 /* UIImage+crop.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,7 +233,8 @@
 		209EBC1C238B8C870008C5E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				209EBC1D238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift */,
+				2015C4F3238E38700069D973 /* ImageTextDTO.swift */,
+				209EBC1D238B8CA80008C5E1 /* ImageTextModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,15 +419,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				209EBC1E238B8CA80008C5E1 /* VisionTextPatternDetectorResult.swift in Sources */,
+				209EBC1E238B8CA80008C5E1 /* ImageTextModel.swift in Sources */,
 				2010855C237D11090091FD2E /* ScanViewController.swift in Sources */,
 				209EBC19238B65DB0008C5E1 /* CMSampleBuffer+UIImage.swift in Sources */,
+				209EBC28238E336C0008C5E1 /* VerificationViewModelFactory.swift in Sources */,
+				209EBC26238E32CA0008C5E1 /* UIImage+crop.swift in Sources */,
 				209EBC20238B98A10008C5E1 /* NSRegularExpression.swift in Sources */,
 				209EBC1B238B8A8A0008C5E1 /* PatternDetector.swift in Sources */,
 				2031A85C23827AD1007A6E2F /* PreviewView.swift in Sources */,
+				209EBC22238BB6F80008C5E1 /* VerificationViewController.swift in Sources */,
 				2021F8262382712500DA02E9 /* ScanViewModel.swift in Sources */,
+				209EBC24238BB7410008C5E1 /* VerificationViewModel.swift in Sources */,
 				2010855A237D11090091FD2E /* AppDelegate.swift in Sources */,
+				2015C4F4238E38700069D973 /* ImageTextDTO.swift in Sources */,
 				209CEB7323865F2600F2B3E9 /* ScanViewControllersFactory.swift in Sources */,
+				2015C4F6238E3ACB0069D973 /* VerificationViewControllerFactory.swift in Sources */,
 				209CEB6C23865D0900F2B3E9 /* TextRecognizer.swift in Sources */,
 				209CEB7123865F1D00F2B3E9 /* ScanViewModelsFactory.swift in Sources */,
 			);

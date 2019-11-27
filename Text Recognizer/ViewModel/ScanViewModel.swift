@@ -10,21 +10,35 @@ import AVFoundation
 import UIKit
 
 protocol ScanViewModelProtocol {
+    var delegate: ScanViewModelDelegate? { get set }
     func recognizeText(from image: UIImage)
 }
 
+// Replace delegate call with flow coordinator.
+protocol ScanViewModelDelegate {
+    func present(viewController: UIViewController)
+}
+
 class ScanViewModel: ScanViewModelProtocol {
+    var delegate: ScanViewModelDelegate?
+
     private let textRecognizer: TextRecognizerProtocol
     private let patternDetector: VisionTextPatternDetectorProtocol
     private let context: CIContext
+    private let viewModelFactory: VerificationViewModelFactoryProtocol.Type
+    private let viewControllerFactory: VerificationViewControllerFactoryProtocol.Type
     private var isRecognitionInProgress = false
 
     init(textRecognizer: TextRecognizerProtocol = TextRecognizer(),
          patternDetector: VisionTextPatternDetectorProtocol = VisionTextPatternDetector(),
-         context: CIContext = CIContext()) {
+         context: CIContext = CIContext(),
+         viewModelFactory: VerificationViewModelFactoryProtocol.Type = VerificationViewModelFactory.self,
+         viewControllerFactory: VerificationViewControllerFactoryProtocol.Type = VerificationViewControllerFactory.self) {
         self.textRecognizer = textRecognizer
         self.patternDetector = patternDetector
         self.context = context
+        self.viewModelFactory = viewModelFactory
+        self.viewControllerFactory = viewControllerFactory
     }
 
     func recognizeText(from image: UIImage) {
@@ -32,16 +46,26 @@ class ScanViewModel: ScanViewModelProtocol {
             isRecognitionInProgress = true
 
             textRecognizer.process(image) { [weak self] visionText, error in
-                guard let self = self else { return }
+                defer {
+                    self?.isRecognitionInProgress = false
+                }
 
-                self.isRecognitionInProgress = false
+                guard let self = self, let visionText = visionText else { return }
 
-                guard let visionText = visionText else { return }
-
-                if let result = self.patternDetector.detect(in: visionText) {
-                    print("Car detected: \(result.text)")
+                self.patternDetector.detect(in: visionText) { imageTextDto in
+                    if let dto = imageTextDto {
+                        self.openVerificationScreen(with: dto, image: image)
+                    }
                 }
             }
         }
+    }
+
+    private func openVerificationScreen(with dto: ImageTextDTO, image: UIImage) {
+        let imageTextModel = ImageTextModel(dto: dto, image: image)
+        // Move code below to flow coordinator
+        let viewModel = viewModelFactory.verificationViewModel(textModel: imageTextModel)
+        let viewController = viewControllerFactory.verificationViewController(viewModel: viewModel)
+        delegate?.present(viewController: viewController)
     }
 }

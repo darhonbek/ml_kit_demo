@@ -15,7 +15,7 @@ enum Regex: String {
 }
 
 protocol VisionTextPatternDetectorProtocol {
-    func detect(in visionText: VisionText) -> VisionTextPatternDetectorResult?
+    func detect(in visionText: VisionText, completion: @escaping (ImageTextDTO?) -> Void)
 }
 
 class VisionTextPatternDetector: VisionTextPatternDetectorProtocol {
@@ -25,17 +25,16 @@ class VisionTextPatternDetector: VisionTextPatternDetectorProtocol {
         self.regex = regex
     }
 
-    func detect(in visionText: VisionText) -> VisionTextPatternDetectorResult? {
-        var result: VisionTextPatternDetectorResult?
+    func detect(in visionText: VisionText, completion: @escaping (ImageTextDTO?) -> Void) {
+        var dto: ImageTextDTO?
 
         for block in visionText.blocks {
-            for line in block.lines {
-                if regex.matches(line.text) {
-                    result = VisionTextPatternDetectorResult(text: line.text, frame: line.frame)
-                }
+            for line in block.lines where regex.matches(line.text) {
+                dto = ImageTextDTO(text: line.text, frame: line.frame)
+                break
             }
         }
 
-        return result
+        completion(dto)
     }
 }

@@ -14,7 +14,7 @@ private extension String {
 }
 
 class ScanViewController: UIViewController {
-    private let viewModel: ScanViewModelProtocol
+    private var viewModel: ScanViewModelProtocol
 
     private lazy var captureSession: AVCaptureSession = {
         return AVCaptureSession()
@@ -33,6 +33,8 @@ class ScanViewController: UIViewController {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
+
+        self.viewModel.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -110,5 +112,14 @@ extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Note: `videoOrientation` is set to `.portrait` explicitly.
         guard let image = sampleBuffer.toImage(videoOrientation: .portrait) else { return }
         viewModel.recognizeText(from: image)
+    }
+}
+
+// MARK: - ScanViewModelDelegate
+
+extension ScanViewController: ScanViewModelDelegate {
+    // Move transition to flow coordinator
+    func present(viewController: UIViewController) {
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
 }

@@ -13,10 +13,7 @@ protocol ScanViewControllerFactoryProtocol {
 }
 
 final class ScanViewControllerFactory: ScanViewControllerFactoryProtocol {
-    private typealias ScanViewControllerClass = ScanViewController
-    static let scanViewControllerClass: UIViewController.Type = ScanViewControllerClass.self
-
     static func scanViewController(viewModel: ScanViewModelProtocol) -> UIViewController {
-        return ScanViewControllerClass(viewModel: viewModel)
+        return ScanViewController(viewModel: viewModel)
     }
 }
