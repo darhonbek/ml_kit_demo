@@ -21,7 +21,7 @@ protocol VisionTextPatternDetectorProtocol {
 class VisionTextPatternDetector: VisionTextPatternDetectorProtocol {
     private let regex: NSRegularExpression
 
-    init(regex: NSRegularExpression = NSRegularExpression(Regex.studentId.rawValue)) {
+    init(regex: NSRegularExpression = NSRegularExpression(Regex.carNumber.rawValue)) {
         self.regex = regex
     }
 

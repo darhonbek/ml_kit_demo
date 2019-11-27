@@ -6,12 +6,22 @@
 //  Copyright © 2019 Darkhonbek Mamataliev. All rights reserved.
 //
 
+import UIKit
+
 protocol VerificationViewModelProtocol {
-    var textModel: ImageTextModel { get }
+    var text: String { get }
+    var image: UIImage? { get }
 }
 
 class VerificationViewModel: VerificationViewModelProtocol {
-    var textModel: ImageTextModel
+    var text: String {
+        return textModel.text
+    }
+    var image: UIImage? {
+        return textModel.image
+    }
+
+    private let textModel: ImageTextModel
 
     init(textModel: ImageTextModel) {
         self.textModel = textModel

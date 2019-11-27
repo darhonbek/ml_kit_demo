@@ -120,6 +120,6 @@ extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 extension ScanViewController: ScanViewModelDelegate {
     // Move transition to flow coordinator
     func present(viewController: UIViewController) {
-        navigationController?.present(viewController, animated: true, completion: nil)
+        present(viewController, animated: true, completion: nil)
     }
 }
