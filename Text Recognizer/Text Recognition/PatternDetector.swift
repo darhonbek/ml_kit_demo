@@ -29,9 +29,13 @@ class VisionTextPatternDetector: VisionTextPatternDetectorProtocol {
         var dto: ImageTextDTO?
 
         for block in visionText.blocks {
-            for line in block.lines where regex.matches(line.text) {
-                dto = ImageTextDTO(text: line.text, frame: line.frame)
-                break
+            for line in block.lines {
+                // Pattern matching can be improved by iterating over elements
+                // and building the line manually by adding elements one by one.
+                if regex.matches(line.text) {
+                    dto = ImageTextDTO(text: line.text, frame: line.frame)
+                    break
+                }
             }
         }
 

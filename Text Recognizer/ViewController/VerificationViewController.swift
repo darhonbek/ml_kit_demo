@@ -16,7 +16,7 @@ private extension String {
 private extension CGFloat {
     static let horizontalPadding: CGFloat = 20.0
     static let verticalPadding: CGFloat = 100.0
-    static let systemFontSize: CGFloat = 35.0
+    static let systemFontSize: CGFloat = 70.0
     static let minimumScaleFactor: CGFloat = 0.5
     static let heightAnchorMultiplier: CGFloat = 0.2
     static let imageViewToTextLabelPadding: CGFloat = 10.0
@@ -62,9 +62,10 @@ class VerificationViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+        // TODO: - find out why the title is not shown.
+        title = .title
         addAndSetupImageView()
         addAndSetupTextLabel()
-        navigationItem.title = .title
     }
 
     private func addAndSetupImageView() {
