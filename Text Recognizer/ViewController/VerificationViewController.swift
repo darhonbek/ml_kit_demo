@@ -9,7 +9,6 @@
 import UIKit
 
 private extension String {
-    static let title = "Verification"
     static let close = "Close"
 }
 
@@ -62,8 +61,6 @@ class VerificationViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        // TODO: - find out why the title is not shown.
-        title = .title
         addAndSetupImageView()
         addAndSetupTextLabel()
     }

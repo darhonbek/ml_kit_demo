@@ -15,6 +15,7 @@ private extension String {
 
 class ScanViewController: UIViewController {
     private var viewModel: ScanViewModelProtocol
+    private lazy var isCameraSessionPaused = false
 
     private lazy var captureSession: AVCaptureSession = {
         return AVCaptureSession()
@@ -50,11 +51,10 @@ class ScanViewController: UIViewController {
         setupCameraPreview()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         captureSession.startRunning()
-
     }
 
     // MARK: - Orientation
@@ -110,7 +110,7 @@ class ScanViewController: UIViewController {
 extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         // Note: `videoOrientation` is set to `.portrait` explicitly.
-        guard let image = sampleBuffer.toImage(videoOrientation: .portrait) else { return }
+        guard let image = sampleBuffer.toImage(videoOrientation: .portrait), !isCameraSessionPaused else { return }
         viewModel.recognizeText(from: image)
     }
 }
@@ -120,6 +120,10 @@ extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 extension ScanViewController: ScanViewModelDelegate {
     // Move transition to flow coordinator
     func present(viewController: UIViewController) {
-        present(viewController, animated: true, completion: nil)
+        isCameraSessionPaused = true
+        present(viewController, animated: true, completion: { [weak self] in
+            guard let self = self else { return }
+            self.isCameraSessionPaused = false
+        })
     }
 }
