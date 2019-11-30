@@ -8,6 +8,8 @@
 
 import FirebaseMLVision
 
+// Pattern matching improvement hint:
+// Add `length` property to match string with exact length.
 enum Regex: String {
     case carNumber = "[0-9]{2}[A-Za-z][0-9]{3}[A-Za-z]{2}"  // 01A123AA
     case cardNumber = "[0-9]{16}"                           // 1234567890123456

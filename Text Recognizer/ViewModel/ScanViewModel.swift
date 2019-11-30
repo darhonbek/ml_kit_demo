@@ -63,6 +63,7 @@ class ScanViewModel: ScanViewModelProtocol {
 
     private func openVerificationScreen(with dto: ImageTextDTO, image: UIImage) {
         let imageTextModel = ImageTextModel(dto: dto, image: image)
+        // Architecture improvement:
         // Move code below to flow coordinator
         let viewModel = viewModelFactory.verificationViewModel(textModel: imageTextModel)
         let viewController = viewControllerFactory.verificationViewController(viewModel: viewModel)
