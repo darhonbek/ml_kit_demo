@@ -61,7 +61,7 @@ DEPENDENCIES:
   - Firebase/MLVisionTextModel
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Firebase
     - FirebaseCore
     - FirebaseInstanceID
@@ -81,7 +81,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 662b8108a09fe9ed01aafdedba100fde8536b0f6
   FirebaseMLCommon: b236f9bc8a020d4c36744d6e402b2fb9d6fe3f6d
   FirebaseMLVision: ff6a597d10017c5dfe1cc6d24293b77f84808060
-  FirebaseMLVisionTextModel: 2a660797599db1be13a9f453df88b7f7c96bba74
+  FirebaseMLVisionTextModel: 906e6beebc52a8eac1a52c296732d85be5ab8f59
   GoogleAPIClientForREST: 44c7b678cbab11d26a47eab7309d6179b1a61f0c
   GoogleMobileVision: 31cfb4319fd0c03d80105680abd9eae9da5e3b47
   GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
@@ -91,4 +91,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: eb07772e2ef9b03ebe5d895d2bd96e06aa06be49
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.9.3
