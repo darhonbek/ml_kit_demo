@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      Initializes and launches window with `scanViewController`.
      */
     private func setupFirstScreen() {
-        // Move 3 lines below to flow coordinator.
         let textRecognizer = TextRecognizer()
         let viewModel = ViewModelFactory.scanViewModel(textRecognizer: textRecognizer)
         let viewController = ViewControllerFactory.scanViewController(viewModel: viewModel)
@@ -34,23 +33,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 }
-
-// MARK: - UIApplicationDelegate
-
-extension AppDelegate {
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-}
-

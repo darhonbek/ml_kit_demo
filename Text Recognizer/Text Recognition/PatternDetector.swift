@@ -8,7 +8,7 @@
 
 import FirebaseMLVision
 
-// Pattern matching improvement hint:
+// NOTE: Pattern matching improvement hint:
 // Add `length` property to match string with exact length.
 enum Regex: String {
     case carNumber = "[0-9]{2}[A-Za-z][0-9]{3}[A-Za-z]{2}"  // 01A123AA
@@ -32,7 +32,7 @@ class VisionTextPatternDetector: VisionTextPatternDetectorProtocol {
 
         for block in visionText.blocks {
             for line in block.lines {
-                // Pattern matching can be improved by iterating over elements
+                // NOTE: Pattern matching can be improved by iterating over elements
                 // and building the line manually by adding elements one by one.
                 if regex.matches(line.text) {
                     dto = ImageTextDTO(text: line.text, frame: line.frame)

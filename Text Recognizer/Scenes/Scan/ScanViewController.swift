@@ -109,7 +109,7 @@ class ScanViewController: UIViewController {
 
 extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // Note: `videoOrientation` is set to `.portrait` explicitly.
+        // NOTE: `videoOrientation` is set to `.portrait` explicitly.
         guard let image = sampleBuffer.toPortraitImage(), !isCameraSessionPaused else { return }
         viewModel.recognizeText(from: image)
     }
@@ -118,7 +118,6 @@ extension ScanViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 // MARK: - ScanViewModelDelegate
 
 extension ScanViewController: ScanViewModelDelegate {
-    // Move transition to flow coordinator
     func present(viewController: UIViewController) {
         isCameraSessionPaused = true
         present(viewController, animated: true, completion: { [weak self] in

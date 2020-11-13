@@ -226,8 +226,8 @@
 		8404B7BD255F29070004A570 /* Verification */ = {
 			isa = PBXGroup;
 			children = (
-				209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */,
 				209EBC21238BB6F80008C5E1 /* VerificationViewController.swift */,
+				209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -235,8 +235,8 @@
 		8404B7BE255F290D0004A570 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
-				2021F8252382712500DA02E9 /* ScanViewModel.swift */,
 				2010855B237D11090091FD2E /* ScanViewController.swift */,
+				2021F8252382712500DA02E9 /* ScanViewModel.swift */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
