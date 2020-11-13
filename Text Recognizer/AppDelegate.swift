@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupFirstScreen() {
         // Move 3 lines below to flow coordinator.
         let textRecognizer = TextRecognizer()
-        let viewModel = ScanViewModelFactory.scanViewModel(textRecognizer: textRecognizer)
-        let viewController = ScanViewControllerFactory.scanViewController(viewModel: viewModel)
+        let viewModel = ViewModelFactory.scanViewModel(textRecognizer: textRecognizer)
+        let viewController = ViewControllerFactory.scanViewController(viewModel: viewModel)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = viewController

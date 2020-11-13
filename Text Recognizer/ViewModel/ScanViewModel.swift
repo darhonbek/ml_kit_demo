@@ -25,15 +25,15 @@ class ScanViewModel: ScanViewModelProtocol {
     private let textRecognizer: TextRecognizerProtocol
     private let patternDetector: VisionTextPatternDetectorProtocol
     private let context: CIContext
-    private let viewModelFactory: VerificationViewModelFactoryProtocol.Type
-    private let viewControllerFactory: VerificationViewControllerFactoryProtocol.Type
+    private let viewModelFactory: ViewModelFactoryProtocol.Type
+    private let viewControllerFactory: ViewControllerFactoryProtocol.Type
     private var isRecognitionInProgress = false
 
     init(textRecognizer: TextRecognizerProtocol = TextRecognizer(),
          patternDetector: VisionTextPatternDetectorProtocol = VisionTextPatternDetector(),
          context: CIContext = CIContext(),
-         viewModelFactory: VerificationViewModelFactoryProtocol.Type = VerificationViewModelFactory.self,
-         viewControllerFactory: VerificationViewControllerFactoryProtocol.Type = VerificationViewControllerFactory.self) {
+         viewModelFactory: ViewModelFactoryProtocol.Type = ViewModelFactory.self,
+         viewControllerFactory: ViewControllerFactoryProtocol.Type = ViewControllerFactory.self) {
         self.textRecognizer = textRecognizer
         self.patternDetector = patternDetector
         self.context = context
