@@ -117,34 +117,14 @@
 			children = (
 				20108559237D11090091FD2E /* AppDelegate.swift */,
 				209CEB77238781C000F2B3E9 /* Factory */,
-				8404B7BC255F28F80004A570 /* Scenes */,
-				2031A85A23827AC0007A6E2F /* View */,
-				2021F8282382713C00DA02E9 /* ViewController */,
 				209EBC1C238B8C870008C5E1 /* Model */,
-				2021F8272382712D00DA02E9 /* ViewModel */,
+				8404B7BC255F28F80004A570 /* Scenes */,
 				209CEB6A23865CF200F2B3E9 /* Text Recognition */,
+				2031A85A23827AC0007A6E2F /* View */,
 				209EBC13238B12640008C5E1 /* Extensions */,
 				2021F8292382714900DA02E9 /* Supporting files */,
 			);
 			path = "Text Recognizer";
-			sourceTree = "<group>";
-		};
-		2021F8272382712D00DA02E9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2021F8252382712500DA02E9 /* ScanViewModel.swift */,
-				209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		2021F8282382713C00DA02E9 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2010855B237D11090091FD2E /* ScanViewController.swift */,
-				209EBC21238BB6F80008C5E1 /* VerificationViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		2021F8292382714900DA02E9 /* Supporting files */ = {
@@ -246,6 +226,8 @@
 		8404B7BD255F29070004A570 /* Verification */ = {
 			isa = PBXGroup;
 			children = (
+				209EBC23238BB7410008C5E1 /* VerificationViewModel.swift */,
+				209EBC21238BB6F80008C5E1 /* VerificationViewController.swift */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -253,6 +235,8 @@
 		8404B7BE255F290D0004A570 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				2021F8252382712500DA02E9 /* ScanViewModel.swift */,
+				2010855B237D11090091FD2E /* ScanViewController.swift */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
