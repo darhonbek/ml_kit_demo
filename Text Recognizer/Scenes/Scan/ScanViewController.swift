@@ -15,13 +15,10 @@ private extension String {
 
 class ScanViewController: UIViewController {
     private var viewModel: ScanViewModelProtocol
-    private lazy var isCameraSessionPaused = false
+    private var isCameraSessionPaused = false
 
-    private lazy var captureSession: AVCaptureSession = {
-        return AVCaptureSession()
-    }()
-
-    private lazy var previewView: PreviewView = {
+    private let captureSession = AVCaptureSession()
+    private let previewView: PreviewView = {
         let view = PreviewView()
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -96,10 +93,13 @@ class ScanViewController: UIViewController {
 
     private func setupCameraPreview() {
         view.addSubview(previewView)
-        previewView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        previewView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        previewView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        previewView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+        NSLayoutConstraint.activate([
+            previewView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            previewView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            previewView.topAnchor.constraint(equalTo: view.topAnchor),
+            previewView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
 
         previewView.videoPreviewLayer.session = captureSession
     }
